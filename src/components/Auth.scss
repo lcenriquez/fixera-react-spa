@@ -1,0 +1,83 @@
+$left-color:  #242e4d;
+$right-color: #897e79;
+$green-dark:  #35c3c1;
+$green-light: #00d6b7;
+$gray:        #8f8f8f;
+$gray-light:  #f5f6f8;
+
+.authContainer {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  padding: 2em;
+  
+  @media screen and (min-width: 600px) {
+    width: 50vw;
+    max-width: 18em;
+  }
+}
+
+  .flex-row {
+    display: flex;
+    margin-bottom: 1em;
+  }
+  
+  .lf--label {
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -8px;
+    z-index: 1;
+    background: $gray-light;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .lf--input {
+    flex: 1;
+    padding: 1em;
+    border: 0;
+    color: $gray;
+    font-size: 1rem;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .lf--submit {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    
+    background-color: $green-dark;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: .75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(black, .2);
+    border-radius: 5px;
+  }
+
+.lf--forgot {
+  margin-top: 1em;
+  color: $green-light;
+  font-size: .65em;
+  text-align: center;
+  position: relative;
+}
+
+::placeholder { color: $gray; }
