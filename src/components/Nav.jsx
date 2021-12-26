@@ -4,7 +4,7 @@ import Logo from '../logo.svg'
 import './Nav.css';
 
 
-function Nav() {
+function Nav({ signOut }) {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <Link to="/">
@@ -15,7 +15,7 @@ function Nav() {
       </Link>
       <div className="navbar-links">
         <a href="#">Dummy link 1</a>
-        <a href="#">Dummy link 2</a>
+        <Link to="/signout" onClick={signOut}>Salir</Link>
       </div>
     </nav>
   );
