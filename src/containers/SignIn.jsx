@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../actions';
@@ -9,8 +9,9 @@ import SignInForm from '../components/SignInForm';
 function SignIn() {
   let [ input, setInput ] = useState({username: '', password: ''});
   let dispatch = useDispatch();
-  let dataRedux = useSelector(state => state.user);
+  let currentUser = useSelector(state => state.user);
   let navigate = useNavigate();
+  let { state } = useLocation();
 
   function handleChange(event) {
     setInput({
@@ -25,10 +26,10 @@ function SignIn() {
   }
 
   useEffect(() => {
-    if(dataRedux.username != '') {
-      navigate("/app");
+    if(currentUser.username !== '') {
+      navigate(state?.path || "/app");
     }
-  }, [dataRedux])
+  }, [currentUser, navigate, state])
 
   return (
     <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} />

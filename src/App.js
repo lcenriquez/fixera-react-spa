@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Home from './containers/Home';
 import ProtectedRoute from './containers/ProtectedRoute';
@@ -8,8 +8,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function PrivateOutlet() {
+  let location = useLocation();
   let user = useSelector(state => state.user);
-  return user.isLoggedIn ? <Outlet /> : <Navigate to="/signin" />;
+  return user.isLoggedIn ? <Outlet /> : <Navigate to="/signin" state={{ path: location.pathname }} />;
 }
 
 function App() {

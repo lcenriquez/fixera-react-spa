@@ -14,7 +14,7 @@ function Nav({ signOut }) {
         </span>
       </Link>
       <div className="navbar-links">
-        <a href="#">Dummy link 1</a>
+        <Link to="/signin">Iniciar sesión</Link>
         <Link to="/signout" onClick={signOut}>Salir</Link>
       </div>
     </nav>
