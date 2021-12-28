@@ -14,14 +14,10 @@ function postRequest(path = "", data = {}) {
 
 const signIn = (data) => {
   return function(dispatch) {
-    return postRequest('auth/login', data)
+    postRequest('auth/login', data)
       .then(response => {
-        if(response.ok) {
-          console.log("OK");
-        } else {
-          console.log("NOT OK");
-        }
-        return response.json();
+        if(response.ok) return response.json();
+        throw new Error("Invalid server response");
       })
       .then(json => {
         json.user = {
@@ -32,8 +28,9 @@ const signIn = (data) => {
           dispatch({ type: "SIGN_IN", data: json });
         }
       })
-      .catch(() => {
-        console.log("Error en el servidor");
+      .catch((error) => {
+        // console.log("Error en el servidor");
+        throw error;
       });
   };
 };
