@@ -1,5 +1,4 @@
-import React from 'react';
-import style from './Auth.scss';
+import './Auth.scss';
 
 
 function SignInForm({ handleSubmit, handleChange }) {
