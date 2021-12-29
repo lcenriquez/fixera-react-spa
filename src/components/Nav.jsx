@@ -3,9 +3,9 @@ import Logo from '../logo.svg'
 import './Nav.css';
 
 
-function Nav({ signOut }) {
+function Nav({ theme, signOut }) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className={`navbar navbar-${theme} bg-${theme}`}>
       <Link to="/">
         <span className="navbar-brand">
           <img id="logo" src={Logo} width="40" height="40" alt="" />

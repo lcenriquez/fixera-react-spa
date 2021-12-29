@@ -5,7 +5,7 @@
   padding: 10px;
 }
 
-.navbar-dark {
+.navbar-dark, .navbar-light {
   color: white;
 }
 
@@ -15,7 +15,11 @@
 }
 
 .bg-dark {
-  background-color: darkslategrey;
+  background-color: darkslategray;
+}
+
+.bg-light {
+  background-color: lightslategray;
 }
 
 .navbar-brand {

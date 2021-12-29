@@ -41,7 +41,14 @@ const signOut = () => {
   };
 };
 
+const toggleTheme = () => {
+  return function(dispatch) {
+    dispatch({ type: "TOGGLE_THEME" });
+  };
+};
+
 module.exports = {
   signIn,
-  signOut
+  signOut,
+  toggleTheme
 }
